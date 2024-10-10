@@ -5,7 +5,6 @@ def generate_auth_code():
     url = f"https://api.pcloud.com/userinfo?getauth=1&username={constants.username}&password={constants.password}"
     response = requests.request("GET", url)
     if "error" in response.json():
-        print(response.json())
         print("[Auth] - Error generating auth code. Bad credentials.")
         sys.exit(1)
     auth_code = response.json().get("auth")
@@ -32,3 +31,22 @@ def __get_filepath():
             f.write("")
     
     return file_path
+
+def get_active_auth_code(runtimes=0):   
+    saved_auth_code = get_auth_code()
+    
+    if user_is_auth(saved_auth_code):
+        return saved_auth_code
+    else:
+        new_auth_code = generate_auth_code()
+        save_auth_code(new_auth_code)
+        if runtimes > 2:
+            raise Exception("[Auth] Trouble getting new auth code. Check credentials.")
+        return get_active_auth_code(runtimes + 1)
+
+def user_is_auth(auth_code):
+    response = requests.request("GET", f"https://api.pcloud.com/userinfo?auth={auth_code}")
+    if response.text.__contains__("error"):
+        return False
+    else:
+        return True

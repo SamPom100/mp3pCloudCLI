@@ -1,5 +1,5 @@
 import sys, os
-from . import download, upload
+from . import download, upload, auth
 
 def show_help():
     help_text = """
@@ -92,7 +92,7 @@ def __verify_constants():
             print("[Main] - Error. Constants are not set. Run --setup.")
             sys.exit(1)
     
-    upload.get_active_auth_code()
+    auth.get_active_auth_code()
 
 if __name__ == '__main__':
     main()
