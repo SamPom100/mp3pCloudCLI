@@ -70,8 +70,10 @@ def main():
         download.download_audio(url)
 
         folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "audio/")
-        file_paths = os.listdir(folder)
+        if not os.path.exists(folder):
+            os.makedirs(folder)
 
+        file_paths = os.listdir(folder)
         for file_name in file_paths:
             full_path = os.path.join(folder, file_name)
             upload.upload_file(file_name, full_path)
