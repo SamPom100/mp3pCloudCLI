@@ -23,7 +23,7 @@ def get_auth_code():
     
 def __get_filepath():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    filename = "auth_code.txt"
+    filename = "auth_code.sam"
     file_path = os.path.join(script_dir, filename)
 
     if not os.path.exists(file_path):
