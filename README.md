@@ -35,3 +35,6 @@ then run `mp3-pcloud-cli` on your Terminal
     pcloud_folder_id:    pCloud folder ID network inspection.
     pcloud_folder_code:  pCloud folder code from shared link.
 ```
+
+# Preview
+<img width="778" alt="Screenshot 2024-10-11 at 12 34 15 AM" src="https://github.com/user-attachments/assets/e91dd5ad-df7d-4e4a-8534-b6214f4542a9">
