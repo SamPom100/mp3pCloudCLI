@@ -1,7 +1,12 @@
 # mp3-pcloud-cli Tool
 Tool to auto-download songs from Youtube and upload them to pCloud.
 
-# How to install
+# Installing from Pip
+`pip install mp3-pcloud-cli`
+
+Project Link: `https://pypi.org/project/mp3-pcloud-cli/`
+
+# Installing from Github
 Ensure you have setuptools.
 
 `pip install setuptools`
