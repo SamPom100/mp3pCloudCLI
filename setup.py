@@ -8,9 +8,10 @@ with open(readme_path, "r", encoding="utf-8") as readme_file:
 
 setup(
     name='mp3-pcloud-cli',
-    version='1.02',
+    version='1.03',
     author='Sam Pomerantz',
     author_email='sam@sampomerantz.me',
+    description='Auto-download songs from Youtube and upload them to pCloud.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     packages=find_packages(),
@@ -23,4 +24,8 @@ setup(
         'requests',
         'yt-dlp',
     ],
+    project_urls={
+        'Source': 'https://github.com/SamPom100/mp3pCloudCLI',
+        'Portfolio': 'https://sampomerantz.me',
+    }
 )
